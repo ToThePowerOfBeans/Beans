@@ -9,7 +9,7 @@
 font = SubResource("SystemFont_12o52")
 font_size = 30
 
-[node name="Node2D" type="Node2D"]
+[node name="MainMenu" type="Node2D"]
 
 [node name="Title" type="Label" parent="."]
 offset_left = 421.0

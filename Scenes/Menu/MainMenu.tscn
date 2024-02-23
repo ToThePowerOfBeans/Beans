@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bubvm5x777jj"]
 
-[ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/Exit button.gd" id="1_8p3sj"]
-[ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/New game.gd" id="1_gj4j4"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/New game.gd" id="1_s72lh"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/Exit button.gd" id="2_gs4cq"]
 
 [sub_resource type="SystemFont" id="SystemFont_12o52"]
 
@@ -25,7 +25,7 @@ offset_top = 273.0
 offset_right = 637.0
 offset_bottom = 304.0
 text = "New Game"
-script = ExtResource("1_gj4j4")
+script = ExtResource("1_s72lh")
 
 [node name="Load button" type="Button" parent="."]
 offset_left = 547.0
@@ -40,7 +40,7 @@ offset_top = 427.0
 offset_right = 638.0
 offset_bottom = 458.0
 text = "Exit"
-script = ExtResource("1_8p3sj")
+script = ExtResource("2_gs4cq")
 
 [connection signal="pressed" from="New game" to="New game" method="_on_pressed"]
 [connection signal="pressed" from="Exit button" to="Exit button" method="_on_pressed"]

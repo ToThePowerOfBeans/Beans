@@ -12,4 +12,4 @@ func _on_items_pressed():
 
 
 func _on_quit_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menu/MainMenu.tscn")

@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://mp7hhpaqn6yn"]
+[gd_scene load_steps=3 format=3 uid="uid://mp7hhpaqn6yn"]
 
 [ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Characters/PlayerCharacter/Character_sprite.png" id="1_ak0c1"]
+[ext_resource type="Texture2D" uid="uid://b5pj4nol8yklc" path="res://Characters/EnemyCharacters/PoliceZombie.png" id="2_opf5k"]
 
 [node name="CharacterSprite" type="Sprite2D"]
-position = Vector2(577, 335)
+texture_filter = 1
+position = Vector2(597, 358)
+scale = Vector2(2.299, 2)
 texture = ExtResource("1_ak0c1")
+
+[node name="PoliceZombie" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-161.375, -3)
+texture = ExtResource("2_opf5k")

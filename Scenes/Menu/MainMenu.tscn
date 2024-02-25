@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bubvm5x777jj"]
+[gd_scene load_steps=4 format=3 uid="uid://bubvm5x777jj"]
 
-[ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/New game.gd" id="1_s72lh"]
-[ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/Exit button.gd" id="2_gs4cq"]
+[ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/MainMenu.gd" id="1_u3gp0"]
 
 [sub_resource type="SystemFont" id="SystemFont_12o52"]
 
@@ -10,6 +9,7 @@ font = SubResource("SystemFont_12o52")
 font_size = 30
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_u3gp0")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 421.0
@@ -25,7 +25,6 @@ offset_top = 273.0
 offset_right = 637.0
 offset_bottom = 304.0
 text = "New Game"
-script = ExtResource("1_s72lh")
 
 [node name="Load button" type="Button" parent="."]
 offset_left = 547.0
@@ -40,7 +39,7 @@ offset_top = 427.0
 offset_right = 638.0
 offset_bottom = 458.0
 text = "Exit"
-script = ExtResource("2_gs4cq")
 
-[connection signal="pressed" from="New game" to="New game" method="_on_pressed"]
-[connection signal="pressed" from="Exit button" to="Exit button" method="_on_pressed"]
+[connection signal="pressed" from="New game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Load button" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="Exit button" to="." method="_on_exit_button_pressed"]

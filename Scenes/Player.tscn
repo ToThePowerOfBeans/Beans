@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://butoq3eabe7u6"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
+[ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Characters/PlayerCharacter/Character_sprite.png" id="1_qyxtc"]
+[ext_resource type="Texture2D" uid="uid://c5urvv6disj10" path="res://Characters/PlayerCharacter/Character_sprite_down.png" id="2_j8e2l"]
+[ext_resource type="Texture2D" uid="uid://dvtcf5553x5oc" path="res://Characters/PlayerCharacter/Character_sprite_left.png" id="3_ov2vu"]
+[ext_resource type="Texture2D" uid="uid://b2qcswmli11er" path="res://Characters/PlayerCharacter/Character_sprite_right.png" id="4_au42b"]
+[ext_resource type="Texture2D" uid="uid://edeh257bfs61" path="res://Characters/PlayerCharacter/Character_sprite_up.png" id="5_numnw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qq83o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qyxtc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j8e2l")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ov2vu")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_au42b")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_numnw")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6sbc"]
+height = 46.0
+
+[node name="Player" type="Area2D"]
+position = Vector2(112, 80)
+script = ExtResource("1_7qjb6")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qq83o")
+animation = &"idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_c6sbc")
+
+[node name="Name_Plate" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -65.0
+offset_right = 13.0
+offset_bottom = -42.0

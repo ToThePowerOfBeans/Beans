@@ -1,17 +1,18 @@
-extends Node2D
+extends Node
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$VBoxContainer/Buttons/NewGame.grab_focus()
+	#$VBoxContainer/Buttons/NewGame/Arrow.global_position.x = global_position.x + 516
+
+
 
 func _on_new_game_pressed():
-	get_tree().change_scene_to_file("res://Scenes/character_sprite.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Player.tscn")
 
 
-func _on_load_button_pressed():
-	pass # Replace with function body.
+func _on_load_game_pressed():
+	print("Load")
 
 
-func _on_exit_button_pressed():
+func _on_quit_pressed():
 	get_tree().quit()

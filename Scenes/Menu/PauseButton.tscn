@@ -4,9 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c4tj0r0y5urk0" path="res://icon.svg" id="2_57yuf"]
 
 [node name="TextureButton" type="TextureButton"]
-custom_minimum_size = Vector2(200, 20)
+custom_minimum_size = Vector2(200, 50)
 size_flags_vertical = 0
-focus_mode = 1
 script = ExtResource("1_fjila")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -22,7 +21,7 @@ text = "[center]Text button[/center]"
 scroll_active = false
 
 [node name="Arrow" type="Sprite2D" parent="."]
-position = Vector2(40, 12.5)
+position = Vector2(40, 13.8889)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_57yuf")
 

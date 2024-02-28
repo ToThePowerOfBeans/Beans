@@ -10,13 +10,13 @@ var arrow_margin = 60
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$RichTextLabel.scroll_active = false
-	set_focus_mode(1)
 	setup_text()
 	hide_arrow()
+	set_focus_mode(FOCUS_ALL)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Engine.is_editor_hint():
 		setup_text()
 		show_arrow()
@@ -26,7 +26,7 @@ func setup_text():
 
 func show_arrow():
 	$Arrow.visible = true
-	$Arrow.global_position.y = global_position.y + (size.y/1.6)
+	$Arrow.global_position.y = global_position.y + (size.y/3.6)
 	var center_x = global_position.x + (size.x/2)
 	$Arrow.global_position.x = center_x - arrow_margin
 

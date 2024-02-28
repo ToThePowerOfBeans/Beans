@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 func  _ready():
 	$VBoxContainer/Resume.grab_focus()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://butoq3eabe7u6"]
+[gd_scene load_steps=9 format=3 uid="uid://dl1q5ufdaln3d"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
 [ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Characters/PlayerCharacter/Character_sprite.png" id="1_qyxtc"]
@@ -56,6 +56,7 @@ height = 46.0
 [node name="Player" type="Area2D"]
 position = Vector2(112, 80)
 script = ExtResource("1_7qjb6")
+speed = 200
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

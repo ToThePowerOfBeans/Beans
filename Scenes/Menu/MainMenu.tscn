@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bubvm5x777jj"]
+[gd_scene load_steps=5 format=3 uid="uid://bubvm5x777jj"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/MainMenu.gd" id="1_u3gp0"]
+[ext_resource type="PackedScene" uid="uid://p6nwsjm680cj" path="res://Scenes/Menu/PauseButton.tscn" id="2_vqv21"]
 
 [sub_resource type="SystemFont" id="SystemFont_12o52"]
 
@@ -8,38 +9,53 @@
 font = SubResource("SystemFont_12o52")
 font_size = 30
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node"]
 script = ExtResource("1_u3gp0")
 
-[node name="Title" type="Label" parent="."]
-offset_left = 421.0
-offset_top = 109.0
-offset_right = 779.0
-offset_bottom = 151.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 324)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
 text = "Dreams of electric beans"
 label_settings = SubResource("LabelSettings_f8yai")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="New game" type="Button" parent="."]
-offset_left = 544.0
-offset_top = 273.0
-offset_right = 637.0
-offset_bottom = 304.0
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 324)
+layout_mode = 2
+
+[node name="NewGame" parent="VBoxContainer/Buttons" instance=ExtResource("2_vqv21")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../LoadGame")
 text = "New Game"
 
-[node name="Load button" type="Button" parent="."]
-offset_left = 547.0
-offset_top = 350.0
-offset_right = 640.0
-offset_bottom = 381.0
+[node name="LoadGame" parent="VBoxContainer/Buttons" instance=ExtResource("2_vqv21")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../NewGame")
+focus_neighbor_bottom = NodePath("../Quit")
 text = "Load game"
+arrow_margin = 65
 
-[node name="Exit button" type="Button" parent="."]
-offset_left = 547.0
-offset_top = 427.0
-offset_right = 638.0
-offset_bottom = 458.0
-text = "Exit"
+[node name="Quit" parent="VBoxContainer/Buttons" instance=ExtResource("2_vqv21")]
+layout_mode = 2
+focus_neighbor_top = NodePath("../LoadGame")
+focus_neighbor_bottom = NodePath("../NewGame")
+text = "Quit"
+arrow_margin = 40
 
-[connection signal="pressed" from="New game" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="Load button" to="." method="_on_load_button_pressed"]
-[connection signal="pressed" from="Exit button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Quit" to="." method="_on_quit_pressed"]

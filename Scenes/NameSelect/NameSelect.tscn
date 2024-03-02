@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://wtbv35hsieql"]
+
+[ext_resource type="Script" path="res://Scenes/NameSelect/NameSelect.gd" id="1_15u1l"]
+[ext_resource type="Script" path="res://Scenes/NameSelect/LineEdit.gd" id="2_0vu1t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjt4p"]
+bg_color = Color(0.490196, 0.607843, 0.764706, 1)
+
+[sub_resource type="Theme" id="Theme_8vxyn"]
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_28ak4"]
+default_font_size = 35
+
+[node name="NameSelect" type="Node2D"]
+script = ExtResource("1_15u1l")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1151.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yjt4p")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 386.0
+offset_top = 211.0
+offset_right = 802.0
+offset_bottom = 277.0
+theme = SubResource("Theme_8vxyn")
+placeholder_text = "enter name"
+max_length = 25
+expand_to_text_length = true
+caret_blink = true
+script = ExtResource("2_0vu1t")
+
+[node name="Continiue" type="Button" parent="."]
+offset_left = 896.0
+offset_top = 539.0
+offset_right = 1077.0
+offset_bottom = 607.0
+text = "	Next"
+
+[node name="GoBack" type="Button" parent="."]
+offset_left = 57.0
+offset_top = 537.0
+offset_right = 238.0
+offset_bottom = 605.0
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 383.0
+offset_top = 126.0
+offset_right = 792.0
+offset_bottom = 175.0
+theme = SubResource("Theme_28ak4")
+text = "Please enter your name:"
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Continiue" to="." method="_on_continiue_pressed"]
+[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]

@@ -1,0 +1,224 @@
+[gd_scene load_steps=14 format=3 uid="uid://bp6enbg1whtjd"]
+
+[ext_resource type="Texture2D" uid="uid://d14lqklx3uhiw" path="res://Backgrounds/Beans.jpg" id="1_4jb11"]
+[ext_resource type="Script" path="res://Scripts/Combat/BattleControler.gd" id="1_rl81a"]
+[ext_resource type="Texture2D" uid="uid://b5pj4nol8yklc" path="res://Characters/EnemyCharacters/PoliceZombie.png" id="2_pocgs"]
+[ext_resource type="AudioStream" uid="uid://dgphsd3igceq" path="res://Audio/Music/BattleMusic.wav" id="2_rt1oe"]
+[ext_resource type="Script" path="res://Scripts/Combat/Enemy.gd" id="5_fhocu"]
+[ext_resource type="Script" path="res://Scripts/Stats/CharacterStats.gd" id="6_ch6kp"]
+[ext_resource type="PackedScene" uid="uid://xsuwusb86b7u" path="res://Characters/PlayerCharacter/CombatPlayer.tscn" id="6_euxvi"]
+[ext_resource type="Resource" uid="uid://bucil0cjpstxy" path="res://Characters/EnemyCharacters/PoliceZombie.tres" id="6_xd17w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepiq"]
+bg_color = Color(0.313726, 0.25098, 0.266667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d1dr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iu2mp"]
+bg_color = Color(0.282353, 0.282353, 0.282353, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_feeg0"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsqcd"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rl81a")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rt1oe")
+volume_db = 5.0
+autoplay = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4jb11")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Enemy" type="TextureRect" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_pocgs")
+script = ExtResource("5_fhocu")
+star_stats = ExtResource("6_xd17w")
+
+[node name="Stats" type="Node" parent="HBoxContainer/Enemy"]
+script = ExtResource("6_ch6kp")
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nepiq")
+
+[node name="CharacterZone" type="HBoxContainer" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player1" parent="PlayerPanel/CharacterZone" instance=ExtResource("6_euxvi")]
+layout_mode = 2
+
+[node name="ActionPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 165.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3d1dr")
+
+[node name="Actions" type="VBoxContainer" parent="ActionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margins" type="MarginContainer" parent="ActionPanel/Actions"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Attack" type="Button" parent="ActionPanel/Actions/Margins"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Margins3/Run")
+focus_neighbor_bottom = NodePath("../../Margins2/Defend")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iu2mp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_feeg0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_feeg0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_feeg0")
+text = "Attack"
+
+[node name="Margins2" type="MarginContainer" parent="ActionPanel/Actions"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Defend" type="Button" parent="ActionPanel/Actions/Margins2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Margins/Attack")
+focus_neighbor_bottom = NodePath("../../Margins3/Run")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iu2mp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_feeg0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_feeg0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_feeg0")
+text = "Defend"
+
+[node name="Margins3" type="MarginContainer" parent="ActionPanel/Actions"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Run" type="Button" parent="ActionPanel/Actions/Margins3"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Margins2/Defend")
+focus_neighbor_bottom = NodePath("../../Margins/Attack")
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iu2mp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_feeg0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_feeg0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_feeg0")
+text = "Run"
+
+[node name="TextBox" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TextBox" type="Panel" parent="TextBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsqcd")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBox/TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Text" type="Label" parent="TextBox/TextBox/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Hello brave adventurers"
+
+[node name="Ticker" type="Label" parent="TextBox/TextBox/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = ">"
+
+[connection signal="pressed" from="ActionPanel/Actions/Margins/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="ActionPanel/Actions/Margins2/Defend" to="." method="_on_defend_pressed"]
+[connection signal="pressed" from="ActionPanel/Actions/Margins3/Run" to="." method="_on_run_pressed"]

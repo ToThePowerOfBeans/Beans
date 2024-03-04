@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://y0ptlamipmvi"]
+
+[ext_resource type="Texture2D" uid="uid://c40rqvt2vh14d" path="res://Textures/TestRoom1.png" id="1_gh4oa"]
+[ext_resource type="PackedScene" uid="uid://dl1q5ufdaln3d" path="res://Scenes/Player.tscn" id="2_rilm6"]
+
+[node name="TestRoom" type="Node2D"]
+
+[node name="TestRoom1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(603, 1051)
+scale = Vector2(1.5, 1.567)
+texture = ExtResource("1_gh4oa")
+
+[node name="Player" parent="." instance=ExtResource("2_rilm6")]
+texture_filter = 1
+position = Vector2(555, 303)
+scale = Vector2(2, 2)

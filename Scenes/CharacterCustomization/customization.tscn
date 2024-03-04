@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://dui636r07vebs"]
+
+[ext_resource type="Script" path="res://Scenes/CharacterCustomization/CharacetrCustomization.gd" id="1_ytcb5"]
+[ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Characters/PlayerCharacter/Character_sprite.png" id="2_noia2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmr13"]
+bg_color = Color(0.419608, 0.611765, 0.858824, 0.6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qctp5"]
+atlas = ExtResource("2_noia2")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyxpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qctp5")
+}],
+"loop": true,
+"name": &"Character1",
+"speed": 5.0
+}]
+
+[node name="CharacterCuztomization" type="Node2D"]
+script = ExtResource("1_ytcb5")
+
+[node name="BackGround" type="Panel" parent="."]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 1171.0
+offset_bottom = 660.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hmr13")
+
+[node name="PlayerSelect" type="AnimatedSprite2D" parent="."]
+position = Vector2(590, 252)
+scale = Vector2(4.46875, 3.60764)
+sprite_frames = SubResource("SpriteFrames_uyxpf")
+animation = &"Character1"
+
+[node name="Previuos" type="Button" parent="."]
+offset_left = 265.0
+offset_top = 234.0
+offset_right = 397.0
+offset_bottom = 288.0
+text = "Previuos"
+
+[node name="Next" type="Button" parent="."]
+offset_left = 768.0
+offset_top = 235.0
+offset_right = 900.0
+offset_bottom = 289.0
+text = "Next"
+
+[node name="Description" type="Label" parent="."]
+offset_left = 491.0
+offset_top = 366.0
+offset_right = 697.0
+offset_bottom = 432.0
+text = "Gender: Male
+Special powers: None
+"
+
+[node name="Select" type="Button" parent="."]
+offset_left = 899.0
+offset_top = 529.0
+offset_right = 1064.0
+offset_bottom = 585.0
+text = "Select"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 79.0
+offset_top = 543.0
+offset_right = 225.0
+offset_bottom = 600.0
+text = "Back"
+
+[connection signal="pressed" from="Previuos" to="." method="_on_previuos_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

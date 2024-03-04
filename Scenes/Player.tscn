@@ -54,7 +54,7 @@ animations = [{
 height = 46.0
 
 [node name="Player" type="Area2D"]
-position = Vector2(112, 80)
+position = Vector2(457, 302)
 script = ExtResource("1_7qjb6")
 speed = 200
 metadata/_edit_group_ = true

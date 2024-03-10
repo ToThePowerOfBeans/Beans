@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dl1q5ufdaln3d"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
-[ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Characters/PlayerCharacter/Character_sprite.png" id="1_qyxtc"]
-[ext_resource type="Texture2D" uid="uid://c5urvv6disj10" path="res://Characters/PlayerCharacter/Character_sprite_down.png" id="2_j8e2l"]
-[ext_resource type="Texture2D" uid="uid://dvtcf5553x5oc" path="res://Characters/PlayerCharacter/Character_sprite_left.png" id="3_ov2vu"]
-[ext_resource type="Texture2D" uid="uid://b2qcswmli11er" path="res://Characters/PlayerCharacter/Character_sprite_right.png" id="4_au42b"]
-[ext_resource type="Texture2D" uid="uid://edeh257bfs61" path="res://Characters/PlayerCharacter/Character_sprite_up.png" id="5_numnw"]
+[ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Textures/Characters/PlayerCharacter/Character_sprite.png" id="1_qyxtc"]
+[ext_resource type="Texture2D" uid="uid://c5urvv6disj10" path="res://Textures/Characters/PlayerCharacter/Character_sprite_down.png" id="2_j8e2l"]
+[ext_resource type="Texture2D" uid="uid://dvtcf5553x5oc" path="res://Textures/Characters/PlayerCharacter/Character_sprite_left.png" id="3_ov2vu"]
+[ext_resource type="Texture2D" uid="uid://b2qcswmli11er" path="res://Textures/Characters/PlayerCharacter/Character_sprite_right.png" id="4_au42b"]
+[ext_resource type="Texture2D" uid="uid://edeh257bfs61" path="res://Textures/Characters/PlayerCharacter/Character_sprite_up.png" id="5_numnw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qq83o"]
 animations = [{

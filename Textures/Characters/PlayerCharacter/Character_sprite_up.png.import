@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5pj4nol8yklc"
-path="res://.godot/imported/PoliceZombie.png-afb1a75b6b9bcc06bd2313f8ad6a0b7d.ctex"
+uid="uid://edeh257bfs61"
+path="res://.godot/imported/Character_sprite_up.png-00218c15f0cd03550fd4a91af073e577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/EnemyCharacters/PoliceZombie.png"
-dest_files=["res://.godot/imported/PoliceZombie.png-afb1a75b6b9bcc06bd2313f8ad6a0b7d.ctex"]
+source_file="res://Textures/Characters/PlayerCharacter/Character_sprite_up.png"
+dest_files=["res://.godot/imported/Character_sprite_up.png-00218c15f0cd03550fd4a91af073e577.ctex"]
 
 [params]
 

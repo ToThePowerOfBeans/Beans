@@ -9,7 +9,7 @@ func _on_line_edit_text_submitted(new_text):
 
 
 func _on_go_back_pressed():
-	pass # Replace with funcon body.
+	get_tree().change_scene_to_file("res://Scenes/Menu/MainMenu.tscn")
 
 
 

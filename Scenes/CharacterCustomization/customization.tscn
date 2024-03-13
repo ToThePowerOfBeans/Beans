@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dui636r07vebs"]
 
 [ext_resource type="Script" path="res://Scenes/CharacterCustomization/CharacetrCustomization.gd" id="1_ytcb5"]
-[ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Characters/PlayerCharacter/Character_sprite.png" id="2_noia2"]
+[ext_resource type="Texture2D" uid="uid://dim67yb50j686" path="res://Textures/Characters/PlayerCharacter/Character_sprite.png" id="2_noia2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmr13"]
 bg_color = Color(0.419608, 0.611765, 0.858824, 0.6)

@@ -1,38 +1,31 @@
-extends Area2D
+extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 250
 var screen_size
+
+var input = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_viewport_rect().size
-
-
+	return
+func get_input():
+	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
+	input.y = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))
+	return input.normalized()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("Right"):
-		velocity.x += 1
-	if Input.is_action_pressed("Left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("Down"):
-		velocity.y += 1
-	if Input.is_action_pressed("Up"):
-		velocity.y -= 1
-
-	velocity = velocity.normalized() * speed
+func _process(_delta):
+	input = get_input()
 	
-	if velocity == Vector2.ZERO:
+	velocity = input * speed
+	
+	if input == Vector2.ZERO:
 		$Sprite.animation = "idle"
-	elif velocity.x > 0: 
-		$Sprite.animation = "walk_right"
-	elif velocity.x < 0: 
-		$Sprite.animation = "walk_left"
-	elif velocity.y > 0: 
-		$Sprite.animation = "walk_down"
-	elif velocity.y < 0: 
-		$Sprite.animation = "walk_up"
+	else:
+		$Sprite.animation = "run"
+		
+	if input.x < 0:
+		$Sprite.flip_h = true
+	elif input.x > 0:
+		$Sprite.flip_h = false
+	move_and_slide()
 	
-
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)

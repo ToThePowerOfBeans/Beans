@@ -243,7 +243,7 @@ theme_override_font_sizes/font_size = 100
 text = "Placeholder"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
 position = Vector2(-2, 13)

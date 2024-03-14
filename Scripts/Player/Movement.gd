@@ -25,7 +25,9 @@ func _process(_delta):
 		
 	if input.x < 0:
 		$Sprite.flip_h = true
+		$Shadow.position.x = 2
 	elif input.x > 0:
 		$Sprite.flip_h = false
+		$Shadow.position.x = -2
 	move_and_slide()
 	

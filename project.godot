@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Menu/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ItemLoader="*res://Scripts/Items/Item_Loader.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

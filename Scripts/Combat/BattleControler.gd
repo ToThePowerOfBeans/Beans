@@ -29,7 +29,7 @@ func _on_run_pressed():
 	if(randi()%10 >= 3):
 		displayText("You ran away well")
 		await self.textbox_closed
-		get_tree().change_scene_to_file("res://Scenes/Player.tscn")
+		get_tree().change_scene_to_file("res://Scenes/test_room.tscn")
 	else:
 		displayText("You failed to run away")
 		await self.textbox_closed
@@ -54,7 +54,7 @@ func _on_attack_pressed():
 	if($HBoxContainer/Enemy/Stats.health <= 0):
 		displayText("%s has been defeated" % $HBoxContainer/Enemy/Stats.charName)
 		await self.textbox_closed
-		get_tree().change_scene_to_file("res://Scenes/Player.tscn")
+		get_tree().change_scene_to_file("res://Scenes/test_room.tscn")
 	$ActionPanel.show()
 	$ActionPanel/Actions/Margins/Attack.grab_focus()
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://dhqq5fofnitk5"]
+[gd_scene load_steps=34 format=3 uid="uid://dhqq5fofnitk5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
 [ext_resource type="Texture2D" uid="uid://di7gcntvwlwpn" path="res://Textures/Characters/PlayerCharacter/PlayerWalk 48x48.png" id="4_xirag"]
 [ext_resource type="Texture2D" uid="uid://do2cmt45x7swl" path="res://Textures/Characters/PlayerCharacter/player run 48x48.png" id="5_kfr3v"]
+[ext_resource type="Texture2D" uid="uid://p3xtw1mp2pk6" path="res://Textures/Characters/PlayerCharacter/shadow.png" id="5_wh3lj"]
 [ext_resource type="Texture2D" uid="uid://dghkbg8admr81" path="res://Textures/Characters/PlayerCharacter/Player Idle 48x48.png" id="7_ee2p1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3cvf"]
@@ -205,8 +206,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dt6rv"]
-radius = 7.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qxld4"]
+radius = 8.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7qjb6")
@@ -218,8 +220,9 @@ animation = &"run"
 autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_dt6rv")
+position = Vector2(0, 12)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_qxld4")
 
 [node name="Name_Plate" type="Label" parent="."]
 z_index = 10
@@ -239,3 +242,9 @@ scale = Vector2(0.05, 0.05)
 theme_override_font_sizes/font_size = 100
 text = "Placeholder"
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(-2, 13)
+texture = ExtResource("5_wh3lj")

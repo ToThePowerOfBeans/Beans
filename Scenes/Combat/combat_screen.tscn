@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://d14lqklx3uhiw" path="res://Backgrounds/Beans.jpg" id="1_4jb11"]
 [ext_resource type="Script" path="res://Scripts/Combat/BattleControler.gd" id="1_rl81a"]
-[ext_resource type="Texture2D" uid="uid://b5pj4nol8yklc" path="res://Characters/EnemyCharacters/PoliceZombie.png" id="2_pocgs"]
+[ext_resource type="Texture2D" uid="uid://b5pj4nol8yklc" path="res://Textures/Characters/EnemyCharacters/PoliceZombie.png" id="2_pocgs"]
 [ext_resource type="AudioStream" uid="uid://dgphsd3igceq" path="res://Audio/Music/BattleMusic.wav" id="2_rt1oe"]
 [ext_resource type="Script" path="res://Scripts/Combat/Enemy.gd" id="5_fhocu"]
 [ext_resource type="Script" path="res://Scripts/Stats/CharacterStats.gd" id="6_ch6kp"]
-[ext_resource type="PackedScene" uid="uid://xsuwusb86b7u" path="res://Characters/PlayerCharacter/CombatPlayer.tscn" id="6_euxvi"]
-[ext_resource type="Resource" uid="uid://bucil0cjpstxy" path="res://Characters/EnemyCharacters/PoliceZombie.tres" id="6_xd17w"]
+[ext_resource type="PackedScene" uid="uid://xsuwusb86b7u" path="res://Textures/Characters/PlayerCharacter/CombatPlayer.tscn" id="6_euxvi"]
+[ext_resource type="Resource" path="res://Textures/Characters/EnemyCharacters/PoliceZombie.tres" id="6_xd17w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepiq"]
 bg_color = Color(0.313726, 0.25098, 0.266667, 1)

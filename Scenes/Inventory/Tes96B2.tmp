@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnp3r67t3osor"]
+
+[ext_resource type="PackedScene" uid="uid://c2aefdy4j3lom" path="res://Scenes/Inventory/Slot.tscn" id="1_31yir"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hfvdm"]
+
+[node name="Test" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="GridContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4
+
+[node name="Slot" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="TextureRect" parent="UI/Inventory/Slot" index="0"]
+texture = SubResource("PlaceholderTexture2D_hfvdm")
+DAMAGE = 30
+
+[node name="Slot2" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot5" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot6" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot7" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot8" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot9" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot10" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot11" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[node name="Slot12" parent="UI/Inventory" instance=ExtResource("1_31yir")]
+layout_mode = 2
+
+[editable path="UI/Inventory/Slot"]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Combat/Enemy.gd" id="5_fhocu"]
 [ext_resource type="Script" path="res://Scripts/Stats/CharacterStats.gd" id="6_ch6kp"]
 [ext_resource type="PackedScene" uid="uid://xsuwusb86b7u" path="res://Textures/Characters/PlayerCharacter/CombatPlayer.tscn" id="6_euxvi"]
-[ext_resource type="Resource" path="res://Textures/Characters/EnemyCharacters/PoliceZombie.tres" id="6_xd17w"]
+[ext_resource type="Resource" uid="uid://bucil0cjpstxy" path="res://Textures/Characters/EnemyCharacters/PoliceZombie.tres" id="6_xd17w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nepiq"]
 bg_color = Color(0.313726, 0.25098, 0.266667, 1)

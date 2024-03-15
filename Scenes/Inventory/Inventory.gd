@@ -6,7 +6,7 @@ func _ready():
 func add_item(ID = "0"):
 	var item_slot_type = ItemLoader.get_slot_type(ID)
 	var item_texture
-	print(item_slot_type)
+	
 	if item_slot_type == 1:
 			item_texture = load("res://Textures/Hat/" + ItemLoader.get_texture(ID))
 	elif item_slot_type == 2:

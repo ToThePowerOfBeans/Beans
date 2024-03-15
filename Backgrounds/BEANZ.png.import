@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnsuhswfnwdne"
-path="res://.godot/imported/MainMenu.png-d435a3c7e57ad3f65fabc12e3ff69c1a.ctex"
+uid="uid://drd56bnmjdff2"
+path="res://.godot/imported/BEANZ.png-e4b3523e14b4a891008cc47a41224627.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/MainMenu.png"
-dest_files=["res://.godot/imported/MainMenu.png-d435a3c7e57ad3f65fabc12e3ff69c1a.ctex"]
+source_file="res://Backgrounds/BEANZ.png"
+dest_files=["res://.godot/imported/BEANZ.png-e4b3523e14b4a891008cc47a41224627.ctex"]
 
 [params]
 

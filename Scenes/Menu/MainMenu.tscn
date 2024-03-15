@@ -1,13 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://bubvm5x777jj"]
+[gd_scene load_steps=9 format=3 uid="uid://bubvm5x777jj"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/MainMenu.gd" id="1_u3gp0"]
 [ext_resource type="PackedScene" uid="uid://p6nwsjm680cj" path="res://Scenes/Menu/PauseButton.tscn" id="2_vqv21"]
+[ext_resource type="Texture2D" uid="uid://bnsuhswfnwdne" path="res://Backgrounds/MainMenu.png" id="3_ilayh"]
+[ext_resource type="Texture2D" uid="uid://drd56bnmjdff2" path="res://Backgrounds/BEANZ.png" id="4_rxu1r"]
 
 [sub_resource type="SystemFont" id="SystemFont_12o52"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f8yai"]
 font = SubResource("SystemFont_12o52")
 font_size = 30
+
+[sub_resource type="Animation" id="Animation_o67wy"]
+resource_name = "BG"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Beanz:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, 324), Vector2(576, 972)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Beanz2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, -324), Vector2(576, 324)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ro1ch"]
+_data = {
+"BG": SubResource("Animation_o67wy")
+}
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_u3gp0")
@@ -55,6 +91,34 @@ focus_neighbor_top = NodePath("../LoadGame")
 focus_neighbor_bottom = NodePath("../NewGame")
 text = "Quit"
 arrow_margin = 40
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_ilayh")
+
+[node name="Beanz" type="Sprite2D" parent="."]
+z_index = -50
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(576, 531.369)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_rxu1r")
+
+[node name="Beanz2" type="Sprite2D" parent="."]
+z_index = -50
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(576, -116.631)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_rxu1r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ro1ch")
+}
+autoplay = "BG"
 
 [connection signal="pressed" from="VBoxContainer/Buttons/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/LoadGame" to="." method="_on_load_game_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://xsuwusb86b7u"]
 
 [ext_resource type="Script" path="res://Scripts/Combat/Character.gd" id="1_qdxfe"]
-[ext_resource type="Resource" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_dhuc2"]
+[ext_resource type="Resource" uid="uid://dst2fqtmi5g5w" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_dhuc2"]
 [ext_resource type="Script" path="res://Scripts/Stats/CharacterStats.gd" id="2_m3klb"]
 
 [node name="Player1" type="VBoxContainer"]

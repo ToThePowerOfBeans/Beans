@@ -24,4 +24,5 @@ text = "SP:10/10"
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("2_m3klb")
 
+[connection signal="LevelUp" from="Stats" to="." method="_on_stats_level_up"]
 [connection signal="health_changed" from="Stats" to="." method="_on_stats_health_changed"]

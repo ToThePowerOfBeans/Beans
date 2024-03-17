@@ -4,8 +4,11 @@
 
 [resource]
 script = ExtResource("1_f7lv3")
-name = "Protag"
-vitality = 60
-strenght = 10
-inteligence = 10
-agility = 10
+name = ""
+vitality = 100
+strenght = 100
+inteligence = 1
+agility = 100
+level = 1
+exp = 0
+levelUpExp = 10

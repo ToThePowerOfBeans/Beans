@@ -2,6 +2,10 @@ extends Control
 
 signal textbox_closed
 
+@onready
+var player = $PlayerPanel/CharacterZone/Player1/Stats
+
+signal done
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TextBox.hide()
@@ -9,7 +13,6 @@ func _ready():
 	displayText("A new %s aproaches" % $HBoxContainer/Enemy/Stats.charName)
 	await self.textbox_closed
 	$ActionPanel.show()
-	$ActionPanel/Actions/Margins/Attack.grab_focus()
 
 func displayText(text):
 	$ActionPanel.hide()
@@ -41,7 +44,7 @@ func _on_defend_pressed():
 
 
 func _on_attack_pressed():
-	if($HBoxContainer/Enemy/Stats.speed > $PlayerPanel/CharacterZone/Player1/Stats.speed):
+	if($HBoxContainer/Enemy/Stats.speed > player.speed):
 		EnemyAttack()
 		await self.textbox_closed
 		PlayerAttack()
@@ -54,9 +57,11 @@ func _on_attack_pressed():
 	if($HBoxContainer/Enemy/Stats.health <= 0):
 		displayText("%s has been defeated" % $HBoxContainer/Enemy/Stats.charName)
 		await self.textbox_closed
-		get_tree().change_scene_to_file("res://Scenes/test_room.tscn")
+		displayText("You have gained 20 exp")
+		await self.textbox_closed
+		$PlayerPanel/CharacterZone/Player1/Stats.expGain(20)
+		emit_signal("done")
 	$ActionPanel.show()
-	$ActionPanel/Actions/Margins/Attack.grab_focus()
 
 func PlayerAttack():
 	displayText("Enemy was hit for %s damage" % $PlayerPanel/CharacterZone/Player1/Stats.attack)
@@ -65,3 +70,12 @@ func PlayerAttack():
 func EnemyAttack():
 	displayText("You have been hit for %s damage" % $HBoxContainer/Enemy/Stats.attack)
 	$PlayerPanel/CharacterZone/Player1/Stats.hit($HBoxContainer/Enemy/Stats.attack)
+
+
+func _on_done():
+	await self.textbox_closed
+	get_tree().change_scene_to_file("res://Scenes/test_room.tscn")
+
+
+func _on_player_1_level_up():
+	displayText("You have gained a level")

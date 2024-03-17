@@ -11,3 +11,9 @@ var strenght : int
 var inteligence : int
 @export
 var agility : int
+@export
+var level : int
+@export
+var exp : int
+@export
+var levelUpExp : int

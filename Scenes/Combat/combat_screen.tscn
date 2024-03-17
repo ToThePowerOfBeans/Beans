@@ -218,6 +218,10 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = ">"
 
+[connection signal="done" from="." to="." method="_on_done"]
+[connection signal="textbox_closed" from="." to="." method="_on_textbox_closed"]
+[connection signal="healt_gone" from="HBoxContainer/Enemy/Stats" to="HBoxContainer/Enemy" method="_on_stats_healt_gone"]
+[connection signal="levelUp" from="PlayerPanel/CharacterZone/Player1" to="." method="_on_player_1_level_up"]
 [connection signal="pressed" from="ActionPanel/Actions/Margins/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="ActionPanel/Actions/Margins2/Defend" to="." method="_on_defend_pressed"]
 [connection signal="pressed" from="ActionPanel/Actions/Margins3/Run" to="." method="_on_run_pressed"]

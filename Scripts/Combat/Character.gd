@@ -4,6 +4,7 @@ extends VBoxContainer
 var stats = $Stats
 @export
 var start_stats : Resource
+signal levelUp
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stats.initialize(start_stats)
@@ -13,3 +14,7 @@ func _ready():
 
 func _on_stats_health_changed(new_health):
 	$HP.text = "HP:%s/%s" % [stats.health, stats.max_health]
+
+
+func _on_stats_level_up():
+	emit_signal("levelUp")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bubvm5x777jj"]
+[gd_scene load_steps=10 format=3 uid="uid://bubvm5x777jj"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/MainMenu.gd" id="1_u3gp0"]
 [ext_resource type="PackedScene" uid="uid://p6nwsjm680cj" path="res://Scenes/Menu/PauseButton.tscn" id="2_vqv21"]
 [ext_resource type="Texture2D" uid="uid://bnsuhswfnwdne" path="res://Backgrounds/MainMenu.png" id="3_ilayh"]
 [ext_resource type="Texture2D" uid="uid://drd56bnmjdff2" path="res://Backgrounds/BEANZ.png" id="4_rxu1r"]
+[ext_resource type="AudioStream" uid="uid://b8hf58va3sd8i" path="res://Audio/Music/MenuTheme1.wav" id="5_26wv0"]
 
 [sub_resource type="SystemFont" id="SystemFont_12o52"]
 
@@ -102,7 +103,7 @@ texture = ExtResource("3_ilayh")
 z_index = -50
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(576, 531.369)
+position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_rxu1r")
 
@@ -110,7 +111,7 @@ texture = ExtResource("4_rxu1r")
 z_index = -50
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(576, -116.631)
+position = Vector2(576, -324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_rxu1r")
 
@@ -119,6 +120,10 @@ libraries = {
 "": SubResource("AnimationLibrary_ro1ch")
 }
 autoplay = "BG"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_26wv0")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Buttons/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/LoadGame" to="." method="_on_load_game_pressed"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var stats : Resource
 @export var speed = 250
 var screen_size
 
@@ -7,6 +8,7 @@ var input = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Name_Plate.text = stats.name
 	return
 func get_input():
 	input.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))

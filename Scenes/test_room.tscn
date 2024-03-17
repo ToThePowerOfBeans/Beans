@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://y0ptlamipmvi"]
+[gd_scene load_steps=15 format=3 uid="uid://y0ptlamipmvi"]
 
 [ext_resource type="PackedScene" uid="uid://bnp3r67t3osor" path="res://Scenes/Inventory/Test.tscn" id="1_arlic"]
 [ext_resource type="PackedScene" uid="uid://dhqq5fofnitk5" path="res://Scenes/Player.tscn" id="2_rilm6"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://1ncw5bmxk6t8" path="res://Textures/Tilemaps/TX Tileset Wall.png" id="3_g6nc6"]
 [ext_resource type="Texture2D" uid="uid://c1tfitixrvyi6" path="res://Textures/Tilemaps/C1_R1.png" id="5_7sxxq"]
 [ext_resource type="PackedScene" uid="uid://bek0vl6ys064x" path="res://Scenes/Item/item_pickup.tscn" id="5_tsm2h"]
+[ext_resource type="Texture2D" uid="uid://ld7vtqnwcgi5" path="res://Textures/Tilemaps/C1_R2.png" id="6_3xr0b"]
+[ext_resource type="Texture2D" uid="uid://q1wdjshhqp1i" path="res://Textures/Tilemaps/C1_R3.png" id="7_po6pb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_buhji"]
 texture = ExtResource("2_xmovk")
@@ -462,7 +464,27 @@ texture_region_size = Vector2i(32, 32)
 21:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:13/0/physics_layer_0/angular_velocity = 0.0
 21:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-208, -144, 208, -144, 208, 160, 192, 160, 192, -64, -192, -64, -192, 0, -208, 0)
-21:13/0/physics_layer_0/polygon_1/points = PackedVector2Array(-208, 0, -216, 0, -216, 64, -208, 64)
+21:13/0/physics_layer_0/polygon_1/points = PackedVector2Array(-192, 64, -192, 160, 192, 160, 208, 160, 208, 176, -208, 168, -208, 64)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_missf"]
+texture = ExtResource("6_3xr0b")
+texture_region_size = Vector2i(32, 32)
+15:2/size_in_atlas = Vector2i(17, 9)
+15:2/0 = 0
+15:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+15:2/0/physics_layer_0/angular_velocity = 0.0
+15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -128, -256, -32, -240, -32, -240, -48, 240, -48, 240, -32, 256, -32, 256, -128)
+15:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-256, 32, -240, 32, -240, 128, 240, 128, 240, 32, 256, 32, 256, 136, -256, 136)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mf83i"]
+texture = ExtResource("7_po6pb")
+texture_region_size = Vector2i(32, 32)
+6:10/size_in_atlas = Vector2i(19, 9)
+6:10/0 = 0
+6:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:10/0/physics_layer_0/angular_velocity = 0.0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(248, -32, 264, -32, 264, -128, -248, -128, -248, -48, 248, -48)
+6:10/0/physics_layer_0/polygon_1/points = PackedVector2Array(-216, -48, -200, -32, -192, -16, -184, -8, -184, 8, -192, 16, -192, 24, -200, 32, -208, 40, -224, 48, -232, 56, -232, 128, 248, 128, 248, 32, 264, 32, 264, 128, 264, 144, -248, 136, -248, -48)
 
 [sub_resource type="TileSet" id="TileSet_kuig2"]
 tile_size = Vector2i(32, 32)
@@ -470,6 +492,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_buhji")
 sources/1 = SubResource("TileSetAtlasSource_hbsii")
 sources/2 = SubResource("TileSetAtlasSource_ueg2g")
+sources/3 = SubResource("TileSetAtlasSource_missf")
+sources/4 = SubResource("TileSetAtlasSource_mf83i")
 
 [node name="TestRoom" type="Node2D"]
 
@@ -492,7 +516,7 @@ rendering_quadrant_size = 32
 format = 2
 layer_0/name = "Ground"
 layer_0/z_index = -2
-layer_0/tile_data = PackedInt32Array(262154, 1376258, 13)
+layer_0/tile_data = PackedInt32Array(262154, 1376258, 13, 393212, 983043, 2, 393196, 393220, 10)
 layer_1/name = "Walls"
 layer_1/z_index = -1
 layer_1/tile_data = PackedInt32Array()

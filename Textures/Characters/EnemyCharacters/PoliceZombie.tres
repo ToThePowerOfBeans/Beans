@@ -5,7 +5,10 @@
 [resource]
 script = ExtResource("1_676aj")
 name = "Zombie"
-vitality = 50
-strenght = 4
+vitality = 10
+strenght = 1
 inteligence = 2
 agility = 4
+level = 0
+exp = 0
+levelUpExp = 0

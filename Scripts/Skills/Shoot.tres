@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skills" load_steps=2 format=3 uid="uid://b017hlpjje83m"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/Skills.gd" id="1_oqcg2"]
+
+[resource]
+script = ExtResource("1_oqcg2")
+name = "Shoot"
+spCost = 2
+damage = 5
+description = "You shoot your gun"

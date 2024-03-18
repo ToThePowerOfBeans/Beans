@@ -4,12 +4,13 @@ signal textbox_closed
 
 @onready
 var player = $PlayerPanel/CharacterZone/Player1/Stats
+@onready var play = $PlayerPanel/CharacterZone/Player1
 
-signal done
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$TextBox.hide()
 	$ActionPanel.hide()
+	$AttackPanel.hide()
 	displayText("A new %s aproaches" % $HBoxContainer/Enemy/Stats.charName)
 	await self.textbox_closed
 	$ActionPanel.show()
@@ -44,38 +45,61 @@ func _on_defend_pressed():
 
 
 func _on_attack_pressed():
+	$ActionPanel.hide()
+	$AttackPanel.show()
+
+func PlayerAttack():
+	displayText("Enemy was hit for %s damage" % player.attack)
+	$HBoxContainer/Enemy/Stats.hit(player.attack)
+
+func PlayerSkill():
+	displayText("You hit the enemy with %s for %s damage" % [play.skills[0].name, play.skills[0].damage])
+	player.useSP(play.skills[0].spCost)
+	$HBoxContainer/Enemy/Stats.hit(play.skills[0].damage)
+
+func EnemyAttack():
+	displayText("You have been hit for %s damage" % $HBoxContainer/Enemy/Stats.attack)
+	player.hit($HBoxContainer/Enemy/Stats.attack)
+
+func _on_player_1_level_up():
+	displayText("You have gained a level")
+
+
+func _on_weapon_pressed():
 	if($HBoxContainer/Enemy/Stats.speed > player.speed):
 		EnemyAttack()
 		await self.textbox_closed
 		PlayerAttack()
-		await self.textbox_closed
 	else:
 		PlayerAttack()
 		await self.textbox_closed
 		EnemyAttack()
+	await self.textbox_closed
+	$AttackPanel.hide()
+	$ActionPanel.show()
+func _on_skils_pressed():
+	if($HBoxContainer/Enemy/Stats.speed > player.speed):
+		EnemyAttack()
 		await self.textbox_closed
-	if($HBoxContainer/Enemy/Stats.health <= 0):
-		displayText("%s has been defeated" % $HBoxContainer/Enemy/Stats.charName)
+		PlayerSkill()
+	else:
+		PlayerSkill()
 		await self.textbox_closed
-		displayText("You have gained 20 exp")
-		await self.textbox_closed
-		$PlayerPanel/CharacterZone/Player1/Stats.expGain(20)
-		emit_signal("done")
+		EnemyAttack()
+	await self.textbox_closed
+	$AttackPanel.hide()
 	$ActionPanel.show()
 
-func PlayerAttack():
-	displayText("Enemy was hit for %s damage" % $PlayerPanel/CharacterZone/Player1/Stats.attack)
-	$HBoxContainer/Enemy/Stats.hit($PlayerPanel/CharacterZone/Player1/Stats.attack)
-
-func EnemyAttack():
-	displayText("You have been hit for %s damage" % $HBoxContainer/Enemy/Stats.attack)
-	$PlayerPanel/CharacterZone/Player1/Stats.hit($HBoxContainer/Enemy/Stats.attack)
-
-
-func _on_done():
+func _on_enemy_dead():
+	displayText("%s has been defeated" % $HBoxContainer/Enemy/Stats.charName)
+	await self.textbox_closed
+	displayText("You have gained 20 exp")
+	await self.textbox_closed
+	player.expGain(20)
 	await self.textbox_closed
 	get_tree().change_scene_to_file("res://Scenes/test_room.tscn")
 
-
-func _on_player_1_level_up():
-	displayText("You have gained a level")
+func _on_player_1_dead():
+	displayText("You have been defeated")
+	await self.textbox_closed
+	get_tree().change_scene_to_file("res://Scenes/DeathScreen.tscn")

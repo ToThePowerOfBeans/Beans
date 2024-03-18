@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://dst2fqtmi5g5w"]
 
 [ext_resource type="Script" path="res://Scripts/Stats/Stats.gd" id="1_f7lv3"]
 
 [resource]
 script = ExtResource("1_f7lv3")
 name = "Lap"
-vitality = 100
-strenght = 100
-inteligence = 1
+vitality = 5
+strenght = 2
+inteligence = 100
 agility = 100
 level = 1
 exp = 0

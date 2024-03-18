@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://xsuwusb86b7u"]
+[gd_scene load_steps=5 format=3 uid="uid://xsuwusb86b7u"]
 
 [ext_resource type="Script" path="res://Scripts/Combat/Character.gd" id="1_qdxfe"]
 [ext_resource type="Resource" uid="uid://dst2fqtmi5g5w" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_dhuc2"]
 [ext_resource type="Script" path="res://Scripts/Stats/CharacterStats.gd" id="2_m3klb"]
+[ext_resource type="Resource" uid="uid://b017hlpjje83m" path="res://Scripts/Skills/Shoot.tres" id="3_vqwbg"]
 
 [node name="Player1" type="VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 script = ExtResource("1_qdxfe")
 start_stats = ExtResource("2_dhuc2")
+skills = [ExtResource("3_vqwbg")]
 
 [node name="CharacterName" type="Label" parent="."]
 layout_mode = 2
@@ -25,4 +27,6 @@ text = "SP:10/10"
 script = ExtResource("2_m3klb")
 
 [connection signal="LevelUp" from="Stats" to="." method="_on_stats_level_up"]
+[connection signal="healt_gone" from="Stats" to="." method="_on_stats_healt_gone"]
 [connection signal="health_changed" from="Stats" to="." method="_on_stats_health_changed"]
+[connection signal="spChange" from="Stats" to="." method="_on_stats_sp_change"]

@@ -13,6 +13,7 @@ var exp : int
 var levelExp : int
 
 signal health_changed(new_health)
+signal spChange(newSp)
 signal healt_gone
 signal defending
 signal LevelUp
@@ -42,6 +43,12 @@ func hit(damage):
 	emit_signal("health_changed", health)
 	if(health == 0):
 		emit_signal("healt_gone")
+
+func useSP(cost):
+	skills -= cost
+	skills = max(0,skills)
+	print("change")
+	emit_signal("spChange", skills)
 
 func heal(amount):
 	health += amount

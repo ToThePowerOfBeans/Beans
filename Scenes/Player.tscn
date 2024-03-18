@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://dhqq5fofnitk5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
-[ext_resource type="Resource" uid="uid://dst2fqtmi5g5w" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_0sjb3"]
+[ext_resource type="Resource" uid="uid://dia8fddovej45" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_0sjb3"]
 [ext_resource type="Texture2D" uid="uid://di7gcntvwlwpn" path="res://Textures/Characters/PlayerCharacter/PlayerWalk 48x48.png" id="4_xirag"]
 [ext_resource type="Texture2D" uid="uid://do2cmt45x7swl" path="res://Textures/Characters/PlayerCharacter/player run 48x48.png" id="5_kfr3v"]
 [ext_resource type="Texture2D" uid="uid://p3xtw1mp2pk6" path="res://Textures/Characters/PlayerCharacter/shadow.png" id="5_wh3lj"]

@@ -8,7 +8,7 @@ func _on_next_pressed():
 
 
 func _on_select_pressed():
-	get_tree().change_scene_to_file("res://Scenes/test_room.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Level1.tscn")
 
 
 func _on_back_pressed():

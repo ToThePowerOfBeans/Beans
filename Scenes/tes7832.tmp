@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://y0ptlamipmvi"]
+[gd_scene load_steps=10 format=3 uid="uid://y0ptlamipmvi"]
 
 [ext_resource type="PackedScene" uid="uid://bnp3r67t3osor" path="res://Scenes/Inventory/Test.tscn" id="1_arlic"]
 [ext_resource type="PackedScene" uid="uid://dhqq5fofnitk5" path="res://Scenes/Player.tscn" id="2_rilm6"]
 [ext_resource type="Texture2D" uid="uid://psxg5havain7" path="res://Textures/Tilemaps/TX Tileset Grass.png" id="2_xmovk"]
 [ext_resource type="Texture2D" uid="uid://deunrawrmij6c" path="res://Textures/Tilemaps/Tileset_Hospital.png" id="4_04ymp"]
 [ext_resource type="PackedScene" uid="uid://bek0vl6ys064x" path="res://Scenes/Item/item_pickup.tscn" id="5_tsm2h"]
+[ext_resource type="PackedScene" uid="uid://cip6yp5nv5jyu" path="res://Scenes/Door.tscn" id="6_3yeub"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_buhji"]
 texture = ExtResource("2_xmovk")
@@ -518,3 +519,7 @@ ID = "3"
 [node name="ItemPickup5" parent="." instance=ExtResource("5_tsm2h")]
 position = Vector2(-632, 166)
 ID = "4"
+
+[node name="Area2D" parent="." instance=ExtResource("6_3yeub")]
+z_index = -1
+position = Vector2(-957, 96)

@@ -5,10 +5,11 @@ func _ready():
 
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		print("no scene in this door")
+	if event.is_action_pressed("Interact"):
 		if get_overlapping_bodies().size() > 0:
 			next_level()
+		else:
+			print("No scene in this door")
 
 
 func next_level():

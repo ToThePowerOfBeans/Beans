@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://dhqq5fofnitk5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
-[ext_resource type="Resource" uid="uid://dia8fddovej45" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_0sjb3"]
+[ext_resource type="Resource" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_0sjb3"]
 [ext_resource type="Texture2D" uid="uid://di7gcntvwlwpn" path="res://Textures/Characters/PlayerCharacter/PlayerWalk 48x48.png" id="4_xirag"]
 [ext_resource type="Texture2D" uid="uid://do2cmt45x7swl" path="res://Textures/Characters/PlayerCharacter/player run 48x48.png" id="5_kfr3v"]
 [ext_resource type="Texture2D" uid="uid://p3xtw1mp2pk6" path="res://Textures/Characters/PlayerCharacter/shadow.png" id="5_wh3lj"]
@@ -222,7 +222,7 @@ animation = &"run"
 autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
+position = Vector2(0, 9)
 rotation = 1.57079
 shape = SubResource("CapsuleShape2D_qxld4")
 
@@ -248,5 +248,5 @@ horizontal_alignment = 1
 [node name="Shadow" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
-position = Vector2(-2, 13)
+position = Vector2(-2, 11)
 texture = ExtResource("5_wh3lj")

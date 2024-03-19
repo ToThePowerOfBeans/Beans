@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bubvm5x777jj"]
+[gd_scene load_steps=12 format=3 uid="uid://bubvm5x777jj"]
 
 [ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/MainMenu.gd" id="1_u3gp0"]
+[ext_resource type="Shader" path="res://Shaders/Outline.gdshader" id="2_l8tju"]
 [ext_resource type="PackedScene" uid="uid://p6nwsjm680cj" path="res://Scenes/Menu/PauseButton.tscn" id="2_vqv21"]
 [ext_resource type="Texture2D" uid="uid://bnsuhswfnwdne" path="res://Backgrounds/MainMenu.png" id="3_ilayh"]
 [ext_resource type="PackedScene" uid="uid://5y2g2ausvo3t" path="res://Scenes/Menu/MainMenuBG.tscn" id="4_gig4d"]
 [ext_resource type="AudioStream" uid="uid://b8hf58va3sd8i" path="res://Audio/Music/MenuTheme1.wav" id="5_26wv0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aty1y"]
+shader = ExtResource("2_l8tju")
 
 [sub_resource type="SystemFont" id="SystemFont_12o52"]
 
@@ -39,6 +43,8 @@ custom_minimum_size = Vector2(0, 324)
 layout_mode = 2
 
 [node name="Title" type="Label" parent="VBoxContainer/CenterContainer"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_aty1y")
 layout_mode = 2
 text = "Dreams of electric beans"
 label_settings = SubResource("LabelSettings_f8yai")

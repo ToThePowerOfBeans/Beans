@@ -1,0 +1,27 @@
+{
+	"0" : {
+		"texture" : "AK47.png",
+		"slot_type" : 5,
+		"DAMAGE" : 3
+	},
+	"1" : {
+		"texture" : "P90.png",
+		"slot_type" : 5,
+		"DAMAGE" : 3
+	},
+	"2" : {
+		"texture" : "PlasmaBlaster.png",
+		"slot_type" : 5,
+		"DAMAGE" : 3
+	},
+	"3" : {
+		"texture" : "Uzi.png",
+		"slot_type" : 5,
+		"DAMAGE" : 3
+	},
+	"4" : {
+		"texture" : "FNScar.png",
+		"slot_type" : 5,
+		"DAMAGE" : 3
+	},
+}

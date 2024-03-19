@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bosdux4ep20i0"]
+
+[ext_resource type="PackedScene" uid="uid://dhqq5fofnitk5" path="res://Scenes/Player.tscn" id="1_rnauo"]
+[ext_resource type="PackedScene" uid="uid://bnp3r67t3osor" path="res://Scenes/Inventory/Test.tscn" id="2_621ix"]
+
+[sub_resource type="TileSet" id="TileSet_2i0ea"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_rnauo")]
+position = Vector2(505, 289)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Test" parent="Player" instance=ExtResource("2_621ix")]
+z_index = 2
+position = Vector2(-284.5, -160.5)
+scale = Vector2(0.497661, 0.502684)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2i0ea")
+rendering_quadrant_size = 32
+format = 2
+layer_0/name = "wAAAAA"

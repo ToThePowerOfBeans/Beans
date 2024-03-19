@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://bucil0cjpstxy"]
+
+[ext_resource type="Script" path="res://Scripts/Stats/Stats.gd" id="1_676aj"]
+
+[resource]
+script = ExtResource("1_676aj")
+name = "Zombie"
+vitality = 10
+strenght = 1
+inteligence = 2
+agility = 4
+level = 0
+exp = 0
+levelUpExp = 0

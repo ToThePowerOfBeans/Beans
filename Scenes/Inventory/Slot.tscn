@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2aefdy4j3lom"]
+
+[ext_resource type="Script" path="res://Scenes/Inventory/Slot.gd" id="1_eh20a"]
+[ext_resource type="Texture2D" uid="uid://cawpmcexgq7y1" path="res://Textures/Ground_Steel2.png" id="2_ra57f"]
+[ext_resource type="Script" path="res://Scenes/Inventory/stats.gd" id="3_8eo36"]
+
+[node name="Slot" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eh20a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_ra57f")
+expand_mode = 1
+script = ExtResource("3_8eo36")
+
+[node name="statLabel" type="Label" parent="."]
+layout_mode = 2

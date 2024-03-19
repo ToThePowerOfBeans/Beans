@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2wrclvkm0crd"]
+[gd_scene load_steps=5 format=3 uid="uid://c2wrclvkm0crd"]
 
 [ext_resource type="PackedScene" uid="uid://c2aefdy4j3lom" path="res://Scenes/Inventory/Slot.tscn" id="1_wbphk"]
 [ext_resource type="Script" path="res://Scenes/Inventory/EquipmentSlot.gd" id="2_pt5ya"]
+[ext_resource type="Shader" path="res://Shaders/Outline.gdshader" id="3_vfo7m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27u8j"]
+shader = ExtResource("3_vfo7m")
 
 [node name="EquipmentSlot" instance=ExtResource("1_wbphk")]
 script = ExtResource("2_pt5ya")
+
+[node name="TextureRect" parent="." index="0"]
+material = SubResource("ShaderMaterial_27u8j")

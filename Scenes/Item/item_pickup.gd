@@ -5,7 +5,6 @@ extends Sprite2D
 func _ready():
 	var item_slot_type = ItemLoader.get_slot_type(ID)
 
-	print(item_slot_type)
 	if item_slot_type == 1:
 		texture = load("res://Textures/Hat/" + ItemLoader.get_texture(ID))
 	elif item_slot_type == 2:

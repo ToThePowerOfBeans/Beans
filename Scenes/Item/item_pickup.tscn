@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bek0vl6ys064x"]
+[gd_scene load_steps=9 format=3 uid="uid://bek0vl6ys064x"]
 
 [ext_resource type="Script" path="res://Scenes/Item/item_pickup.gd" id="1_phyxv"]
-[ext_resource type="Texture2D" uid="uid://p3xtw1mp2pk6" path="res://Textures/Characters/PlayerCharacter/shadow.png" id="2_2l58p"]
+[ext_resource type="Shader" path="res://Shaders/Outline.gdshader" id="1_tpx5n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e3x8a"]
+shader = ExtResource("1_tpx5n")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wlfvt"]
 size = Vector2(32, 32)
@@ -47,6 +50,7 @@ _data = {
 
 [node name="ItemPickup" type="Sprite2D"]
 texture_filter = 1
+material = SubResource("ShaderMaterial_e3x8a")
 position = Vector2(0, -1)
 scale = Vector2(1.5, 1.5)
 texture = SubResource("PlaceholderTexture2D_wlfvt")
@@ -57,12 +61,6 @@ scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_o0vy4")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-position = Vector2(0, 8)
-texture = ExtResource("2_2l58p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

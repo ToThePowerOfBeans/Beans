@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_f7lv3")
-name = "waa"
+name = "sfa"
 vitality = 5
 strenght = 2
 inteligence = 100

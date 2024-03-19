@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi1gekay6r8vb"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/BeanScript.gd" id="2_6bucx"]
+[ext_resource type="Texture2D" uid="uid://c83v7nadvlpb7" path="res://Textures/Bean.png" id="2_pwefh"]
+
+[node name="Bean" type="CharacterBody2D"]
+script = ExtResource("2_6bucx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_pwefh")
+
+[node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="_on_visibility_notifier_screen_exited"]

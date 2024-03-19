@@ -1,5 +1,5 @@
 shader_type canvas_item;
-const vec4 outline_color = vec4(0,0,0,1);
+const vec4 outline_color = vec4(0,1,1,1);
 
 void fragment(){
 	float size_x = 1.0/float(textureSize(TEXTURE, 0).x);

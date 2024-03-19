@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://5y2g2ausvo3t"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/BG generator.gd" id="1_c8mmb"]
+[ext_resource type="PackedScene" uid="uid://v60r5u3td1nx" path="res://Scenes/Menu/Lightning.tscn" id="2_p6cgq"]
+
+[node name="MainMenuBg" type="Node2D"]
+script = ExtResource("1_c8mmb")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -2
+color = Color(0.129412, 0.14902, 0.180392, 1)
+polygon = PackedVector2Array(1152, 0, 0, 0, 0, 648, 1152, 648)
+
+[node name="Lightning" parent="." instance=ExtResource("2_p6cgq")]
+position = Vector2(560, 0)
+scale = Vector2(4, 4)

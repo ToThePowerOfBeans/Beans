@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Buttons/Main Menu/MainMenu.gd" id="1_u3gp0"]
 [ext_resource type="PackedScene" uid="uid://p6nwsjm680cj" path="res://Scenes/Menu/PauseButton.tscn" id="2_vqv21"]
 [ext_resource type="Texture2D" uid="uid://bnsuhswfnwdne" path="res://Backgrounds/MainMenu.png" id="3_ilayh"]
-[ext_resource type="Texture2D" uid="uid://drd56bnmjdff2" path="res://Backgrounds/BEANZ.png" id="4_rxu1r"]
+[ext_resource type="PackedScene" uid="uid://5y2g2ausvo3t" path="res://Scenes/Menu/MainMenuBG.tscn" id="4_gig4d"]
 [ext_resource type="AudioStream" uid="uid://b8hf58va3sd8i" path="res://Audio/Music/MenuTheme1.wav" id="5_26wv0"]
 
 [sub_resource type="SystemFont" id="SystemFont_12o52"]
@@ -16,30 +16,6 @@ font_size = 30
 resource_name = "BG"
 length = 3.0
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Beanz:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(576, 324), Vector2(576, 972)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Beanz2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(576, -324), Vector2(576, 324)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ro1ch"]
 _data = {
@@ -99,21 +75,8 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_ilayh")
 
-[node name="Beanz" type="Sprite2D" parent="."]
-z_index = -50
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(576, 324)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_rxu1r")
-
-[node name="Beanz2" type="Sprite2D" parent="."]
-z_index = -50
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(576, -324)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("4_rxu1r")
+[node name="MainMenuBg" parent="." instance=ExtResource("4_gig4d")]
+z_index = -1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

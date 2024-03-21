@@ -1,11 +1,15 @@
-[gd_scene load_steps=35 format=3 uid="uid://dhqq5fofnitk5"]
+[gd_scene load_steps=37 format=3 uid="uid://dhqq5fofnitk5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
-[ext_resource type="Resource" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_0sjb3"]
+[ext_resource type="Resource" uid="uid://cdv32ie58oh1n" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_0sjb3"]
+[ext_resource type="Shader" path="res://Shaders/Outline.gdshader" id="3_pqkni"]
 [ext_resource type="Texture2D" uid="uid://di7gcntvwlwpn" path="res://Textures/Characters/PlayerCharacter/PlayerWalk 48x48.png" id="4_xirag"]
 [ext_resource type="Texture2D" uid="uid://do2cmt45x7swl" path="res://Textures/Characters/PlayerCharacter/player run 48x48.png" id="5_kfr3v"]
 [ext_resource type="Texture2D" uid="uid://p3xtw1mp2pk6" path="res://Textures/Characters/PlayerCharacter/shadow.png" id="5_wh3lj"]
 [ext_resource type="Texture2D" uid="uid://dghkbg8admr81" path="res://Textures/Characters/PlayerCharacter/Player Idle 48x48.png" id="7_ee2p1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxr1n"]
+shader = ExtResource("3_pqkni")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3cvf"]
 atlas = ExtResource("7_ee2p1")
@@ -217,6 +221,7 @@ stats = ExtResource("2_0sjb3")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_oxr1n")
 sprite_frames = SubResource("SpriteFrames_lwe1e")
 animation = &"run"
 autoplay = "idle"

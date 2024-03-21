@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://cdv32ie58oh1n"]
 
 [ext_resource type="Script" path="res://Scripts/Stats/Stats.gd" id="1_f7lv3"]
 
 [resource]
 script = ExtResource("1_f7lv3")
-name = "sfa"
+name = "sad"
 vitality = 5
 strenght = 2
 inteligence = 100

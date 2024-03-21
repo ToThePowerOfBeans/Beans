@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5oak5ayxf5yy"]
+
+[ext_resource type="Texture2D" uid="uid://jyy0pg3ickxi" path="res://Textures/Ground_Wood1.png" id="1_gvq3e"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_p7tmm"]
+
+[node name="Inventory" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 64.0
+offset_right = 520.0
+offset_bottom = 576.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+z_index = -1
+position = Vector2(384, 320)
+scale = Vector2(288, 528)
+mesh = SubResource("QuadMesh_p7tmm")
+texture = ExtResource("1_gvq3e")

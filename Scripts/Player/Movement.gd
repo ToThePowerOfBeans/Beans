@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var stats : Resource
 @export var speed = 250
+@export var disabled : bool = false
 var screen_size
 
 var input = Vector2.ZERO
@@ -16,20 +17,23 @@ func get_input():
 	return input.normalized()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	input = get_input()
-	
-	velocity = input * speed
-	
-	if input == Vector2.ZERO:
-		$Sprite.animation = "idle"
-	else:
-		$Sprite.animation = "run"
+	#if(disabled == false):
+		input = get_input()
 		
-	if input.x < 0:
-		$Sprite.flip_h = true
-		$Shadow.position.x = 2
-	elif input.x > 0:
-		$Sprite.flip_h = false
-		$Shadow.position.x = -2
-	move_and_slide()
+		velocity = input * speed
+		
+		if input == Vector2.ZERO:
+			$Sprite.animation = "idle"
+		else:
+			$Sprite.animation = "run"
+			
+		if input.x < 0:
+			$Sprite.flip_h = true
+			$Shadow.position.x = 2
+		elif input.x > 0:
+			$Sprite.flip_h = false
+			$Shadow.position.x = -2
+		move_and_slide()
+	#else:
+		#$Sprite.animation = "idle"
 	

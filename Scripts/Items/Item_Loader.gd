@@ -10,10 +10,10 @@ func _ready():
 	file.close()
 
 func get_texture(ID = "0"):
-	return items[ID]["texture"]
+	return items[str(ID)]["texture"]
 	
 func get_ATK(ID = "0"):
-	return items[ID]["DAMAGE"]
+	return items[str(ID)]["DAMAGE"]
 	
 func get_slot_type(ID = "0"):
-	return items[ID]["slot_type"]
+	return items[str(ID)]["slot_type"]

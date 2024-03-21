@@ -16,6 +16,6 @@ func _ready():
 	elif item_slot_type == 5:
 		texture = load("res://Textures/Weapons/" + ItemLoader.get_texture(ID))
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	get_parent().find_child("Inventory").add_item(ID)
 	queue_free()

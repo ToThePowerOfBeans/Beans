@@ -6,7 +6,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("Interact"):
-		if get_overlapping_bodies().size() > 0:
+		if overlaps_body($"../Player"):
 			next_level()
 		else:
 			print("No scene in this door")

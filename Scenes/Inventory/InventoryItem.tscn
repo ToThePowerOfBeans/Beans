@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bov85hb87a61c"]
+
+[ext_resource type="Texture2D" uid="uid://bhk1ke443tbqq" path="res://Textures/Weapons/Blunderbuss.png" id="1_40sqy"]
+[ext_resource type="Script" path="res://Scenes/Inventory/InventoryItem.gd" id="1_rtmyf"]
+[ext_resource type="Texture2D" uid="uid://jprnt6jywdjp" path="res://Textures/UI/Item_Slot.png" id="1_sbmis"]
+[ext_resource type="Shader" path="res://Shaders/Outline.gdshader" id="3_wbwas"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_va4dh"]
+shader = ExtResource("3_wbwas")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xwdc2"]
+shader = ExtResource("3_wbwas")
+
+[node name="InventoryItem" type="TextureRect"]
+material = SubResource("ShaderMaterial_va4dh")
+custom_minimum_size = Vector2(256, 64)
+anchors_preset = -1
+anchor_right = 0.174
+anchor_bottom = 0.049
+offset_right = 55.552
+offset_bottom = 32.248
+texture = ExtResource("1_sbmis")
+script = ExtResource("1_rtmyf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_xwdc2")
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("1_40sqy")

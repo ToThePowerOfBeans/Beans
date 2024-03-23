@@ -28,6 +28,10 @@ mouse_cursor/custom_image="res://Textures/UI/images__1_-removebg-preview.png"
 
 project/assembly_name="Beans"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 ui_accept={

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dhqq5fofnitk5"]
+[gd_scene load_steps=39 format=3 uid="uid://dhqq5fofnitk5"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Movement.gd" id="1_7qjb6"]
 [ext_resource type="Resource" uid="uid://cdv32ie58oh1n" path="res://Textures/Characters/PlayerCharacter/MC.tres" id="2_0sjb3"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://do2cmt45x7swl" path="res://Textures/Characters/PlayerCharacter/player run 48x48.png" id="5_kfr3v"]
 [ext_resource type="Texture2D" uid="uid://p3xtw1mp2pk6" path="res://Textures/Characters/PlayerCharacter/shadow.png" id="5_wh3lj"]
 [ext_resource type="Texture2D" uid="uid://dghkbg8admr81" path="res://Textures/Characters/PlayerCharacter/Player Idle 48x48.png" id="7_ee2p1"]
+[ext_resource type="PackedScene" uid="uid://b5oak5ayxf5yy" path="res://Scenes/Inventory/Inventory.tscn" id="8_g5j01"]
+[ext_resource type="Script" path="res://Scenes/Inventory/Inventory.gd" id="9_477s8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oxr1n"]
 shader = ExtResource("3_pqkni")
@@ -255,3 +257,16 @@ z_index = -1
 texture_filter = 1
 position = Vector2(-2, 11)
 texture = ExtResource("5_wh3lj")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="Inventory" parent="Camera" instance=ExtResource("8_g5j01")]
+visible = false
+offset_left = -575.5
+offset_top = -323.5
+offset_right = -575.5
+offset_bottom = -323.5
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(576, 324)
+script = ExtResource("9_477s8")
+metadata/_edit_use_anchors_ = true

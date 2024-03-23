@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5oak5ayxf5yy"]
+[gd_scene load_steps=5 format=3 uid="uid://b5oak5ayxf5yy"]
 
+[ext_resource type="PackedScene" uid="uid://bov85hb87a61c" path="res://Scenes/Inventory/InventoryItem.tscn" id="1_axvgu"]
 [ext_resource type="Texture2D" uid="uid://jyy0pg3ickxi" path="res://Textures/Ground_Wood1.png" id="1_gvq3e"]
+[ext_resource type="PackedScene" uid="uid://b445dpeq00uxf" path="res://Scenes/Inventory/EquipmentSlot.tscn" id="2_vv3n2"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_p7tmm"]
 
@@ -25,6 +27,52 @@ offset_right = 520.0
 offset_bottom = 576.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="InventoryItem" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem4" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem5" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem6" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem7" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem8" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="InventoryItem9" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_axvgu")]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 184.0
+offset_right = 632.0
+offset_bottom = 536.0
+
+[node name="Head" parent="GridContainer" instance=ExtResource("2_vv3n2")]
+layout_mode = 2
+
+[node name="Body" parent="GridContainer" instance=ExtResource("2_vv3n2")]
+layout_mode = 2
+
+[node name="Legs" parent="GridContainer" instance=ExtResource("2_vv3n2")]
+layout_mode = 2
+
+[node name="Weapon" parent="GridContainer" instance=ExtResource("2_vv3n2")]
 layout_mode = 2
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]

@@ -1,9 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://y0ptlamipmvi"]
+[gd_scene load_steps=9 format=3 uid="uid://y0ptlamipmvi"]
 
 [ext_resource type="PackedScene" uid="uid://dhqq5fofnitk5" path="res://Scenes/Player.tscn" id="2_rilm6"]
-[ext_resource type="PackedScene" uid="uid://b5oak5ayxf5yy" path="res://Scenes/Inventory/Inventory.tscn" id="2_x4ydw"]
 [ext_resource type="Texture2D" uid="uid://psxg5havain7" path="res://Textures/Tilemaps/TX Tileset Grass.png" id="2_xmovk"]
-[ext_resource type="Script" path="res://Scenes/Inventory/Inventory.gd" id="3_f7my1"]
 [ext_resource type="Texture2D" uid="uid://deunrawrmij6c" path="res://Textures/Tilemaps/Tileset_Hospital.png" id="4_04ymp"]
 [ext_resource type="PackedScene" uid="uid://bek0vl6ys064x" path="res://Scenes/Item/item_pickup.tscn" id="5_tsm2h"]
 [ext_resource type="PackedScene" uid="uid://cip6yp5nv5jyu" path="res://Scenes/Door.tscn" id="6_3yeub"]
@@ -482,19 +480,6 @@ sources/1 = SubResource("TileSetAtlasSource_hbsii")
 position = Vector2(552, 96)
 scale = Vector2(2, 2)
 
-[node name="Camera" type="Camera2D" parent="Player"]
-
-[node name="Inventory" parent="Player/Camera" instance=ExtResource("2_x4ydw")]
-visible = false
-offset_left = -575.5
-offset_top = -323.5
-offset_right = -575.5
-offset_bottom = -323.5
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(576, 324)
-script = ExtResource("3_f7my1")
-metadata/_edit_use_anchors_ = true
-
 [node name="Hospital" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(1.49501, 1.49519)
@@ -517,15 +502,15 @@ ID = "1"
 
 [node name="ItemPickup3" parent="." instance=ExtResource("5_tsm2h")]
 position = Vector2(-24, 321)
-ID = "2"
+ID = "1"
 
 [node name="ItemPickup4" parent="." instance=ExtResource("5_tsm2h")]
 position = Vector2(790, 100)
-ID = "3"
+ID = "1"
 
 [node name="ItemPickup5" parent="." instance=ExtResource("5_tsm2h")]
 position = Vector2(-632, 166)
-ID = "4"
+ID = "2"
 
 [node name="Area2D" parent="." instance=ExtResource("6_3yeub")]
 z_index = -1

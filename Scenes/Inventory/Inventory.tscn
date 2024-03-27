@@ -58,9 +58,9 @@ layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 568.0
+offset_left = 648.0
 offset_top = 184.0
-offset_right = 632.0
+offset_right = 712.0
 offset_bottom = 536.0
 
 [node name="Head" parent="GridContainer" instance=ExtResource("2_vv3n2")]

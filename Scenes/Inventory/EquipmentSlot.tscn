@@ -1,24 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://b445dpeq00uxf"]
+[gd_scene load_steps=5 format=3 uid="uid://b445dpeq00uxf"]
 
+[ext_resource type="Texture2D" uid="uid://bi0l1xd5k7n6w" path="res://Textures/UI/Item_Standalone.png" id="1_a7tyg"]
 [ext_resource type="Shader" path="res://Shaders/Outline.gdshader" id="1_gjc75"]
-[ext_resource type="Texture2D" uid="uid://cawpmcexgq7y1" path="res://Textures/Ground_Steel2.png" id="2_ry46q"]
 [ext_resource type="Script" path="res://Scenes/Inventory/InventoryItem.gd" id="3_p5h70"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_va4dh"]
-shader = ExtResource("1_gjc75")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xwdc2"]
 shader = ExtResource("1_gjc75")
 
 [node name="InventoryItem" type="TextureRect"]
-material = SubResource("ShaderMaterial_va4dh")
 custom_minimum_size = Vector2(64, 64)
 anchors_preset = -1
 anchor_right = 0.174
 anchor_bottom = 0.049
 offset_right = -136.448
 offset_bottom = 32.248
-texture = ExtResource("2_ry46q")
+texture = ExtResource("1_a7tyg")
 script = ExtResource("3_p5h70")
 
 [node name="TextureRect" type="TextureRect" parent="."]

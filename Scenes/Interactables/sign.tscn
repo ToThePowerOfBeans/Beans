@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfncxbex01nw7"]
+
+[ext_resource type="Shader" path="res://Shaders/Outline.gdshader" id="1_oh5bm"]
+[ext_resource type="Texture2D" uid="uid://db5pdqe5mju32" path="res://Textures/Characters/Sign.png" id="2_h1duw"]
+[ext_resource type="Texture2D" uid="uid://p3xtw1mp2pk6" path="res://Textures/Characters/PlayerCharacter/shadow.png" id="3_bm5wi"]
+[ext_resource type="Script" path="res://Scenes/Interactables/sign.gd" id="3_yvmhy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e3x8a"]
+shader = ExtResource("1_oh5bm")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o0vy4"]
+
+[node name="Sign" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_e3x8a")
+position = Vector2(0, -1)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_h1duw")
+script = ExtResource("3_yvmhy")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_o0vy4")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 10)
+texture = ExtResource("3_bm5wi")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -49.0
+offset_top = -44.0
+offset_right = 49.0
+offset_bottom = -23.0
+tooltip_text = "dgas"
+
+[node name="Label" type="Label" parent="Panel"]
+offset_right = 98.0
+offset_bottom = 23.0
+text = "hello"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
